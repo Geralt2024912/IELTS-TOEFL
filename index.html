@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Master</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1><span>托福雅思单词词频查询</span> 🎯</h1>
+            <p class="subtitle">任洋制造 ✨</p>
+        </header>
+
+        <main>
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <input type="text" id="wordInput" placeholder="Enter a word..." class="search-input">
+                    <button id="clearButton" class="clear-button" style="display: none;">✕</button>
+                </div>
+                <button id="searchButton" class="search-button">Search 🔍</button>
+            </div>
+
+            <div class="result-container">
+                <div class="word-section">
+                    <h2 id="wordTitle"></h2>
+                </div>
+
+                <div class="examples-grid">
+                    <div class="usage-section">
+                        <h3>📖 剑雅真题</h3>
+                        <div id="ieltsExamples" class="examples"></div>
+                    </div>
+
+                    <div class="usage-section">
+                        <h3>📚 托福TPO</h3>
+                        <div id="toeflExamples" class="examples"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,349 @@
+:root {
+    --apple-blue: #007AFF;
+    --apple-gray: #8E8E93;
+    --apple-light-gray: #F2F2F7;
+    --apple-dark: #1D1D1F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background-color: #FFFFFF;
+    color: var(--apple-dark);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--apple-dark);
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+h1 span {
+    background: linear-gradient(135deg, #007AFF, #5856D6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: var(--apple-gray);
+    font-size: 1.2rem;
+}
+
+.search-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search-input-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.search-input {
+    width: 100%;
+    padding-right: 2.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--apple-light-gray);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--apple-blue);
+}
+
+.search-button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--apple-blue);
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.result-container {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.result-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.word-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--apple-light-gray);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: var(--apple-gray);
+    margin: 1.5rem 0 1rem;
+}
+
+.examples,
+#commonPhrases,
+#idioms {
+    background: var(--apple-light-gray);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+}
+
+.example-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(142, 142, 147, 0.2);
+}
+
+.example-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.highlight {
+    background-color: rgba(0, 122, 255, 0.15);
+    border-radius: 3px;
+    padding: 0 2px;
+    font-weight: 500;
+}
+
+.frequency-badge {
+    background: linear-gradient(135deg, #007AFF, #5856D6);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    margin: 15px 0 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
+    animation: slideIn 0.3s ease;
+}
+
+.frequency-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.frequency-item {
+    padding: 0.5rem;
+}
+
+.frequency-item:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.frequency-stars {
+    font-size: 24px;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.frequency-count {
+    font-size: 14px;
+    opacity: 0.9;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.frequency-info {
+    color: var(--apple-gray);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.translation-toggle {
+    background: var(--apple-light-gray);
+    border: none;
+    border-radius: 15px;
+    padding: 5px 12px;
+    font-size: 0.9rem;
+    color: var(--apple-blue);
+    cursor: pointer;
+    margin: 8px 0;
+    transition: all 0.2s ease;
+}
+
+.translation-toggle:hover {
+    background: rgba(0, 122, 255, 0.1);
+}
+
+.translation-toggle.active {
+    background: var(--apple-blue);
+    color: white;
+}
+
+.translation {
+    margin-top: 8px;
+    padding: 10px;
+    background: var(--apple-light-gray);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.source-info {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.source-tag {
+    display: inline-block;
+    background: #34C759;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.passage-title {
+    color: #666;
+    font-size: 13px;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.example-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: var(--apple-blue);
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.clear-button {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--apple-gray);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.clear-button:hover {
+    background-color: var(--apple-light-gray);
+    color: var(--apple-dark);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+
+    .examples-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .frequency-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .frequency-item:first-child {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding-bottom: 1rem;
+    }
+}
