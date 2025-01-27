@@ -30,13 +30,19 @@
                     <h2 id="wordTitle"></h2>
                 </div>
 
+                <!-- Add mobile tabs -->
+                <div class="mobile-tabs">
+                    <button class="tab-button active" data-target="ielts">雅思</button>
+                    <button class="tab-button" data-target="toefl">托福</button>
+                </div>
+
                 <div class="examples-grid">
-                    <div class="usage-section">
+                    <div class="usage-section" id="ieltsSection">
                         <h3>📖 剑雅真题</h3>
                         <div id="ieltsExamples" class="examples"></div>
                     </div>
 
-                    <div class="usage-section">
+                    <div class="usage-section" id="toeflSection">
                         <h3>📚 托福TPO</h3>
                         <div id="toeflExamples" class="examples"></div>
                     </div>

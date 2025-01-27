@@ -398,4 +398,27 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'instant'
         });
     });
+
+    // Add mobile tab functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const ieltsSection = document.getElementById('ieltsSection');
+    const toeflSection = document.getElementById('toeflSection');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            // Show/hide sections based on selected tab
+            if (button.dataset.target === 'ielts') {
+                ieltsSection.style.display = 'block';
+                toeflSection.style.display = 'none';
+            } else {
+                ieltsSection.style.display = 'none';
+                toeflSection.style.display = 'block';
+            }
+        });
+    });
 });
