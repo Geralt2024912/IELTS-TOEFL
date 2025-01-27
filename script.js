@@ -378,4 +378,24 @@ document.addEventListener('DOMContentLoaded', () => {
         clearButton.style.display = 'none';
         wordInput.focus();
     });
+
+    // Add scroll to top functionality
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    // Show button when page is scrolled
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
+
+    // Scroll to top when button is clicked
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'instant'
+        });
+    });
 });
